@@ -86,6 +86,9 @@ public class Main {
                 case 4:
                     printList(playList);
                     break;
+                case 5:
+                    printMenu();
+                    break;
                 default:
                     System.err.print("!! Wrong input please try again !!");
                     break;
