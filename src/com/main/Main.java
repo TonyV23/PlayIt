@@ -42,7 +42,7 @@ public class Main {
             printMenu();
         }
         while (!quit){
-            switch (io.setINT("\nChoose An action Please :")){
+            switch (io.setINT("\n--->>>Choose An action Please :")){
                 case 0:
                     quit = true;
                     break;
