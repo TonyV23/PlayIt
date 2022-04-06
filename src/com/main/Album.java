@@ -27,10 +27,10 @@ public class Album {
     public boolean addSong(String title, double duration){
         if (findSongs(title) == null){
             songs.add(new Song(title,duration));
-            System.out.print(title+ "Successfully added to the list");
+            System.out.print("\n"+title+" Successfully added on album's list");
             return true;
         }else{
-            System.err.print("Song with this name "+title+" already exists !!");
+            System.err.print("\nSong with this name "+title+" already exists !!");
             return false;
         }
     }
@@ -41,7 +41,7 @@ public class Album {
             PlayList.add(this.songs.get(index));
             return true;
         }
-        System.err.print("This album does not have song with trackNumber :"+trackNumber);
+        System.err.print("\nThis album does not have song with trackNumber :"+trackNumber);
         return false;
     }
 
@@ -51,7 +51,7 @@ public class Album {
                 PlayList.add(checkedSong);
                 return true;
         }
-        System.err.print(title+" there is no such song in the album");
+        System.err.print("\n"+title+" there is no such song in the album");
         return false;
     }
 }

@@ -10,24 +10,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Album album = new Album(io.setString("Name of the Album :"),io.setString("Name of the Artist :"));
-        album.addSong(io.setString("Song's title : "),io.setFLOAT("Song duration : "));
-        album.addSong(io.setString("Song's title : "),io.setFLOAT("Song duration : "));
-        album.addSong(io.setString("Song's title : "),io.setFLOAT("Song duration : "));
-
-        Album album1 = new Album(io.setString("Name of the Album :"),io.setString("Name of the Artist :"));
-        album.addSong(io.setString("Song's title : "),io.setFLOAT("Song duration : "));
-        album.addSong(io.setString("Song's title : "),io.setFLOAT("Song duration : "));
-        album.addSong(io.setString("Song's title : "),io.setFLOAT("Song duration : "));
-
-        albumsCreated.add(album);
-        albumsCreated.add(album1);
+        int albumToCreate = io.setINT("How many albums do you want to create ? --> ");
+        for (int i = 0; i < albumToCreate; i++) {
+            Album album = new Album(io.setString("\nName of the Album :"),io.setString("\nName of the Artist :"));
+            albumsCreated.add(album);
+            int songToCreate = io.setINT("How many songs do want to put in the album ? -->");
+            for (int j = 0; j < songToCreate; j++) {
+                album.addSong(io.setString("\nSong's title : "),io.setFLOAT("\nSong duration : "));
+            }
+        }
 
         LinkedList<Song> PlayList1 = new LinkedList<>();
-
-        albumsCreated.get(0).addToPlayList(io.setString("Song's title to add to the playlist :"),PlayList1);
-        albumsCreated.get(1).addToPlayList(io.setString("Song's title to add to the playlist :"),PlayList1);
-        albumsCreated.get(2).addToPlayList(io.setString("Song's title to add to the playlist :"),PlayList1);
+        int songAddToPlayList = io.setINT("How many songs do you want to add to a playList");
+        for (int i = 0; i < songAddToPlayList; i++) {
+            albumsCreated.get(i).addToPlayList(io.setString("\nSong's title to add to the playlist :"),PlayList1);
+        }
 
         play(PlayList1);
     }
