@@ -84,8 +84,8 @@ public class Main {
                     }
                     break;
                 case 4:
+                    printList(playList);
                     break;
-
                 default:
                     System.err.print("!! Wrong input please try again !!");
                     break;
