@@ -89,6 +89,19 @@ public class Main {
                 case 5:
                     printMenu();
                     break;
+                case 6:
+                    if (playList.size() > 0){
+                        listIterator.remove();
+                        if (listIterator.hasNext()){
+                            System.out.print("Now playing "+listIterator.next().toString());
+
+                        }else{
+                            if (listIterator.hasPrevious()){
+                                System.err.print("Now playing "+listIterator.previous().toString());
+                            }
+                        }
+                    }
+                    break;
                 default:
                     System.err.print("!! Wrong input please try again !!");
                     break;
